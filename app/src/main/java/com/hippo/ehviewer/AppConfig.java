@@ -36,7 +36,7 @@ import java.util.Calendar;
 
 public class AppConfig {
 
-    private static final String APP_DIRNAME = "EhViewer";
+    private static final String APP_DIRNAME = BuildConfig.APP_DIRNAME;
 
     private static final String DOWNLOAD = "download";
     private static final String TEMP = "temp";
