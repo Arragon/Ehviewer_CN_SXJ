@@ -20,6 +20,14 @@ android {
         appRelease {
             dimension "distribute"
         }
+        nasTest {
+            dimension "distribute"
+            applicationId "app.enc.ehviewer"
+            versionNameSuffix "-nas"
+            buildConfigField "String", "APP_DIRNAME", '"EhViewerNasTest"'
+            buildConfigField "boolean", "ENABLE_APP_UPDATER", "false"
+            resValue "string", "app_name", "EhViewer NAS Test"
+        }
 //        googlePlay {
 //            dimension "distribute"
 //        }
@@ -32,6 +40,8 @@ android {
         targetSdkVersion 30
         versionCode 111
         versionName "2.0.2.6"
+        buildConfigField "String", "APP_DIRNAME", '"EhViewer"'
+        buildConfigField "boolean", "ENABLE_APP_UPDATER", "true"
         vectorDrawables.useSupportLibrary = true
         resourceConfigurations += ['zh', 'zh-rCN', 'zh-rHK', 'zh-rTW', 'es', 'ja', 'ko', 'fr', 'de', 'th']
         testOptions.unitTests.includeAndroidResources = true
