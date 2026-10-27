@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application>
+        <activity
+            android:name=".ui.MainActivity"
+            tools:node="merge">
+            <intent-filter
+                android:autoVerify="true"
+                tools:node="remove">
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="exhentai.org" />
+                <data android:host="e-hentai.org" />
+                <data android:host="g.e-hentai.org" />
+                <data android:host="lofi.e-hentai.org" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="firebase_analytics_collection_enabled"
+            android:value="false" />
+        <meta-data
+            android:name="firebase_crashlytics_collection_enabled"
+            android:value="false" />
+    </application>
+</manifest>
