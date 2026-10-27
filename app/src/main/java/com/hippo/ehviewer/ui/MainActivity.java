@@ -63,6 +63,7 @@ import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 import com.hippo.drawerlayout.DrawerLayout;
 import com.hippo.ehviewer.AppConfig;
+import com.hippo.ehviewer.BuildConfig;
 import com.hippo.ehviewer.EhApplication;
 import com.hippo.ehviewer.R;
 import com.hippo.ehviewer.Settings;
@@ -449,8 +450,8 @@ public final class MainActivity extends StageActivity
     @Override
     protected void onStart() {
         super.onStart();
-        if (!Settings.getCloseAutoUpdate()){
-            AppUpdater.update(this,false);
+        if (BuildConfig.ENABLE_APP_UPDATER && !Settings.getCloseAutoUpdate()) {
+            AppUpdater.update(this, false);
         }
     }
 
