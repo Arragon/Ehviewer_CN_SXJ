@@ -38,6 +38,7 @@ import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
 import com.hippo.ehviewer.AppConfig;
+import com.hippo.ehviewer.BuildConfig;
 import com.hippo.ehviewer.EhApplication;
 import com.hippo.ehviewer.R;
 import com.hippo.ehviewer.updater.AppUpdater;
@@ -89,10 +90,10 @@ public class AboutFragment extends BasePreferenceFragmentCompat
                     "About EhViewer", null);
         } else if (KEY_DONATE.equals(key)) {
             showDonationDialog();
-        } else if (KEY_CHECK_FOR_UPDATES.equals(key)&&activity!=null) {
-//            Settings.setCheckUpdate(false);
-//            Distribute.checkForUpdate();
-            AppUpdater.update(activity,true);
+        } else if (KEY_CHECK_FOR_UPDATES.equals(key) && activity != null) {
+            if (BuildConfig.ENABLE_APP_UPDATER) {
+                AppUpdater.update(activity, true);
+            }
         }
         return true;
     }
